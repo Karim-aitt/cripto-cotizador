@@ -29,19 +29,21 @@ export const useSelectMonedas = (label, opciones) => {
 			<Select
                 value={state}
                 onChange={e => setState(e.target.value)}
-            >
+            >   
+                {/* Valor default */}
 				<option 
                 value=""
                 >
                 Seleccione
                 </option>
 
+                {/* Mapeo de valores */}
 				{opciones.map((opcion) => (
 					<option key={opcion.id} value={opcion.id}>
 						{opcion.nombre}
 					</option>
 				))}
-                
+
 			</Select>
 		</>
 	);
