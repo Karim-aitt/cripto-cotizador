@@ -46,6 +46,13 @@ const Imagen = styled.img`
   display: block;
 `
 
+const Footer = styled.div`
+  display: flex;
+  justify-content: center;
+  color: #FFF;
+  margin-top: 50px;
+`
+
 function App() {
 
   const [monedas, setMonedas] = useState({})
@@ -75,22 +82,28 @@ function App() {
   }, [monedas])
 
   return (
-    <Contenedor>
-      <Imagen 
-      src={ImagenCripto}
-      alt="Imagen Criptomonedas"
-      >
-      </Imagen>
-      <div>
-        <Heading>Cotiza Criptomonedas al Instante</Heading>
-        <Formulario 
-          setMonedas={setMonedas}
-        />
-        {cargando && <Spinner />}
-        {resultado.PRICE  && <Resultado resultado={resultado} />}
-      </div>
-      
-    </Contenedor>
+    <>
+      <Contenedor>
+        <Imagen 
+        src={ImagenCripto}
+        alt="Imagen Criptomonedas"
+        >
+        </Imagen>
+        <div>
+          <Heading>Cotiza Criptomonedas al Instante</Heading>
+          <Formulario 
+            setMonedas={setMonedas}
+          />
+          {cargando && <Spinner />}
+          {resultado.PRICE  && <Resultado resultado={resultado} />}
+        </div>
+        
+      </Contenedor>
+
+      <Footer>
+          <p>Creado por <a href='https://github.com/Karim-aitt' target="_blank">Karim Gonzalez</a> 2022</p>
+      </Footer>
+    </>
   )
 }
 
